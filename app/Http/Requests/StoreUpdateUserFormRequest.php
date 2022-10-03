@@ -23,7 +23,9 @@ class StoreUpdateUserFormRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $id = $this->id ??'';
+
+        $rules =[
 
             'company' => [
                 'required',
@@ -51,8 +53,11 @@ class StoreUpdateUserFormRequest extends FormRequest
                 'string',
                 'max:255',
                 'min:3',
-            ],
+            ]
 
         ];
+        
+
+        return $rules;
     }
 }

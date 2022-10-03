@@ -14,7 +14,8 @@
         </ul>
     @endif
 
-    <form action="#" method="post">
+    <form action="{{ route ('users.update', $user->id)}}" method="post">
+        @method('PUT')
         @csrf
         <input type="text" name="company" placeholder="Empresa:" value="{{$user->company}}">
         <input type="text" name="name" placeholder="Nome:"value="{{ $user->name}}">
